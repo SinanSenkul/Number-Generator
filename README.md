@@ -1,0 +1,2 @@
+-An app that generates random numbers, between two numbers given by the user.
+-The result numbers are all different, there are no numbers which are equal.
