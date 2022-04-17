@@ -14,7 +14,7 @@ function createNumber(){
         document.getElementById('tB1').value="";
         return;
     }
-    if(num3>=(num2-num1){
+    if(num3>=(num2-num1)){
         alert(`Maximum of ${num2-num1} numbers can be created`);
         document.getElementById('tB3').value="";
         return;
