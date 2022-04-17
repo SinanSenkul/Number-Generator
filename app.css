@@ -33,7 +33,7 @@ body{
     margin-right: 1em; 
 }
 
-#tB4, #tB5{
+#tB4{
     flex: 1;
     min-width: 150px;
 }
