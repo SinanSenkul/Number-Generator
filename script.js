@@ -1,23 +1,30 @@
 function createNumber(){
     if(document.getElementById('tB1').value==="" || document.getElementById('tB2').value==="" || document.getElementById('tB3').value===""){
-        alert("Fill in the required fields");
+        document.getElementById("alertText").value="- Fill in the required fields";
+        if(document.getElementById('tB1').value===""){
+            document.getElementById('tB1').style="border-color:red";
+        }
+        if(document.getElementById('tB2').value===""){
+            document.getElementById('tB2').style="border-color:red";
+        }
+        if(document.getElementById('tB3').value===""){
+            document.getElementById('tB3').style="border-color:red";
+        }
         return;
     }
-    num1=document.getElementById('tB1').value*1;
-    num2=document.getElementById('tB2').value*1;
-    num3=document.getElementById('tB3').value*1;
-    if(num1===0 && num2===0 && num3===0){
-        alert("Fill in the required fields");
-        return;
-    }
+    num1=parseInt(document.getElementById('tB1').value);
+    num2=parseInt(document.getElementById('tB2').value);
+    num3=parseInt(document.getElementById('tB3').value);
     if(num1>=num2){
-        alert("First number must be smaller");
+        document.getElementById("alertText").value="- First number must be smaller";
         document.getElementById('tB1').value="";
+        document.getElementById('tB1').style="border-color:red";
         return;
     }
     if(num3>(num2-num1+1)){
-        alert(`Maximum of ${num2-num1+1} numbers can be created`);
+        document.getElementById("alertText").value=`- Maximum of ${num2-num1+1} numbers can be created`;
         document.getElementById('tB3').value="";
+        document.getElementById('tB3').style="border-color:red";
         return;
     }
     numArrayLength=num2-num1;
@@ -39,4 +46,11 @@ function createNumber(){
         numArray[ranNum]=null;
     }
     document.getElementById("tB4").value=resArray;
+}
+
+function reNew(){
+    document.getElementById('tB1').style="border-color:black";
+    document.getElementById('tB2').style="border-color:black";
+    document.getElementById('tB3').style="border-color:black";
+    document.getElementById('alertText').value="";
 }
