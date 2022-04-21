@@ -1,5 +1,6 @@
 body{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: white;
 }
@@ -28,16 +29,40 @@ body{
     flex-direction: row;
 }
 
+#buttondiv{
+    border-color: transparent;
+}
+
+.alertdiv{
+    display: flex;
+    margin: auto;
+    margin-top: 2em;
+    width: 25%;
+    min-width: 240px;
+}
+
+#alertText{
+    color: red;
+    border: none;
+    flex: 1;
+    min-width: 150px;
+    outline: none;
+}
+
 #tB1, #tB2, #tB3{
     height: 1.5em;
     width: 3em;
     margin-left: 1em;
-    margin-right: 1em; 
+    margin-right: 1em;
+    border: 0.5px solid black;
+    border-radius: 5px;
 }
 
 #tB4{
     flex: 1;
     min-width: 150px;
+    border-color: 0.5px solid black;
+    border-radius: 5px;
 }
 
 #button{
@@ -53,12 +78,8 @@ body{
     cursor: pointer;
 }
 
-#buttondiv{
-    border-color: transparent;
-}
-
 @media (max-width:400px){
-   body{
+   body, #alertText{
     background-color: #f6f6f6;
    } 
 
