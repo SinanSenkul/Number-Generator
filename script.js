@@ -1,13 +1,6 @@
 resArray=new Array();
 
 function createNumber(){
-    num1=parseInt(document.getElementById('tB1').value);
-    num2=parseInt(document.getElementById('tB2').value);
-    num3=parseInt(document.getElementById('tB3').value);
-    numArrayLength=num2-num1;
-    numArray=new Array(numArrayLength);
-    resArray.length=num3;
-
     if(document.getElementById('tB1').value==="" || document.getElementById('tB2').value==="" || document.getElementById('tB3').value===""){
         document.getElementById("alertText").value="- Fill in the required fields";
         if(document.getElementById('tB1').value===""){
@@ -21,6 +14,12 @@ function createNumber(){
         }
         return;
     }
+    num1=parseInt(document.getElementById('tB1').value);
+    num2=parseInt(document.getElementById('tB2').value);
+    num3=parseInt(document.getElementById('tB3').value);
+    numArrayLength=num2-num1;
+    numArray=new Array(numArrayLength);
+    resArray.length=num3;
     if(num1>=num2){
         document.getElementById("alertText").value="- First number must be smaller";
         document.getElementById('tB1').value="";
@@ -69,16 +68,14 @@ function reNew(){
 }
 
 function sorter(){
-    array=resArray;
-    arraySort=new Array(array.length);
-    for(i=0;i<array.length;i++){
-      for(j=0;j<array.length;j++){
-        if(array[j]>array[j+1]){
-          bigger=array[j];
-          array[j]=array[j+1];
-          array[j+1]=bigger;
+    for(i=0;i<resArray.length;i++){
+      for(j=0;j<resArray.length;j++){
+        if(resArray[j]>resArray[j+1]){
+          bigger=resArray[j];
+          resArray[j]=resArray[j+1];
+          resArray[j+1]=bigger;
         }
       }
     }
-    document.getElementById("tB4").value=array;
+    document.getElementById("tB4").value=resArray;
 }
