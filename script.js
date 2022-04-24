@@ -32,8 +32,7 @@ function createNumber(){
             return;
         }
         numArrayLength=num2-num1;
-        numArray=new Array();
-        numArray.length=numArrayLength;
+        numArray=new Array(numArrayLength);
         resArray.length=num3;
         for(i=0; i<=numArrayLength; i++){
             numArray[i]=num1+i;
@@ -51,12 +50,15 @@ function createNumber(){
         document.getElementById("tB4").value=resArray;
     }
     else{
-        resArray=[];
-        for(i=0; i<=num3; i++){
-            resArray[i]=Math.round(Math.random()*num2);
-            while(resArray[i]<num1){
-                resArray[i]=Math.round(Math.random()*num2);
-            }
+        numArrayLength=num2-num1;
+        numArray=new Array(numArrayLength);
+        resArray.length=num3;
+        for(i=0; i<=numArrayLength; i++){
+            numArray[i]=num1+i;
+        }
+        for(j=0; j<num3; j++){
+            ranNum=Math.round(Math.random()*(numArrayLength));
+            resArray[j]=numArray[ranNum];
         }
         document.getElementById("tB4").value=resArray;
     }
