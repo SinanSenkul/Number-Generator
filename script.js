@@ -24,13 +24,13 @@ function createNumber(){
         document.getElementById('tB1').style="border-color:red";
         return;
     }
-    if(num3>(num2-num1+1)){
-        document.getElementById("alertText").value=`- Maximum of ${num2-num1+1} numbers can be created`;
-        document.getElementById('tB3').value="";
-        document.getElementById('tB3').style="border-color:red";
-        return;
-    }
     if(document.getElementById("checkbox").checked===true){
+        if(num3>(num2-num1+1)){
+            document.getElementById("alertText").value=`- Maximum of ${num2-num1+1} numbers can be created`;
+            document.getElementById('tB3').value="";
+            document.getElementById('tB3').style="border-color:red";
+            return;
+        }
         numArrayLength=num2-num1;
         numArray=new Array();
         numArray.length=numArrayLength;
