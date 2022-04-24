@@ -4,6 +4,9 @@ function createNumber(){
     num1=parseInt(document.getElementById('tB1').value);
     num2=parseInt(document.getElementById('tB2').value);
     num3=parseInt(document.getElementById('tB3').value);
+    numArrayLength=num2-num1;
+    numArray=new Array(numArrayLength);
+    resArray.length=num3;
 
     if(document.getElementById('tB1').value==="" || document.getElementById('tB2').value==="" || document.getElementById('tB3').value===""){
         document.getElementById("alertText").value="- Fill in the required fields";
@@ -31,9 +34,6 @@ function createNumber(){
             document.getElementById('tB3').style="border-color:red";
             return;
         }
-        numArrayLength=num2-num1;
-        numArray=new Array(numArrayLength);
-        resArray.length=num3;
         for(i=0; i<=numArrayLength; i++){
             numArray[i]=num1+i;
         }
@@ -50,9 +50,6 @@ function createNumber(){
         document.getElementById("tB4").value=resArray;
     }
     else{
-        numArrayLength=num2-num1;
-        numArray=new Array(numArrayLength);
-        resArray.length=num3;
         for(i=0; i<=numArrayLength; i++){
             numArray[i]=num1+i;
         }
