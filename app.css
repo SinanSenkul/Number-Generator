@@ -65,16 +65,16 @@ body{
     border-radius: 5px;
 }
 
-#button{
+.button{
     color: white;
-    background-color: rgb(90, 81, 4);
+    background-color: rgba(71, 71, 69, 0.856);
     border-radius: 5px;
     height: 2em;
     width: 8em;
     margin: auto;
 }
 
-#button:hover{
+.button:hover {
     cursor: pointer;
 }
 
